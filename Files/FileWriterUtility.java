@@ -46,8 +46,8 @@ public class FileWriterUtility {
         FileOutputStream fileOutputStream = new FileOutputStream(fileName);
 
         fileOutputStream.write(data);
-        fileOutputStream.flush();
-        fileOutputStream.close();
+        fileOutputStream.flush(); // metni bufferden file-a oturur ve əlavə məlumatların saxlanması üçün bufferin icini temizleyir, amma baglantiyi sondurmur
+        fileOutputStream.close(); // baglantiyi (connection) baglayir (sondurur)
 
         System.out.println("done");
 
