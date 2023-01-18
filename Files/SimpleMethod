@@ -1,0 +1,42 @@
+package Files;
+
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileReader;
+import java.io.PrintWriter;
+
+public class SimpleMethod {
+
+    public static void main(String[] args) {
+
+        try {
+            // write method
+            File file = new File("simpleFile.txt");
+
+            if ( ! file.exists()) {
+                file.createNewFile();
+            }
+
+            PrintWriter printWriter = new PrintWriter(file);
+            printWriter.println("Simple method");
+            printWriter.println("From YouTube Qoshda Dudar");
+            printWriter.close();
+
+            // read method
+            BufferedReader bufferedReader = new BufferedReader(new FileReader("simpleFile.txt"));
+
+            String line = bufferedReader.readLine();
+            String text = line;
+            while ((line = bufferedReader.readLine()) != null) {
+                text += "\n"+line ;
+            }
+
+            System.out.println(text);
+
+        } catch (Exception ex) {
+            System.out.println(ex);
+        }
+
+    }
+
+}
