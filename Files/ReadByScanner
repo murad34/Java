@@ -1,0 +1,27 @@
+package Files;
+
+import java.io.File;
+import java.util.Scanner;
+
+public class ReadByScanner {
+
+    public static void main(String[] args) throws Exception {
+
+//        String path2 = "C:\Users\Murad\Desktop";
+
+        // separator - hansi OS hansi simvoldu / or \ or smth...
+
+        String separator = File.separator;
+        String path = separator + "C:" + separator + "Users" + separator + "Murad" + separator + "Desktop" + separator + "java_serkhan.txt";
+
+        File file = new File(path);
+
+        Scanner scanner = new Scanner(file);
+
+        while (scanner.hasNextLine()) {
+            System.out.println(scanner.nextLine());
+        }
+
+    }
+
+}
