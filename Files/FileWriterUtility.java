@@ -35,6 +35,8 @@ public class FileWriterUtility {
         try (BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(fileName,append))) {
             bufferedWriter.write(text);
         }
+        
+        // append yerine true gonderilmelidi, false gonderilse birinci method kimi ishleyecek
 
     }
 
