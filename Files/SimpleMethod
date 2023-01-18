@@ -31,6 +31,8 @@ public class SimpleMethod {
                 text += "\n"+line ;
             }
 
+            bufferedReader.close();
+
             System.out.println(text);
 
         } catch (Exception ex) {
